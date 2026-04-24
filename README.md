@@ -1,73 +1,48 @@
-public class Product {
+Жобаның мақсаты
 
-    private int id;
+Қоймадағы өнімдерді тиімді басқару:
+қосу, көру, іздеу, жаңарту және өшіру.
 
-    private String name;
+⸻
 
-    private int quantity;
+🧱 Жобаның құрылымы
 
-    private double price;
+Жоба 3 негізгі бөліктен тұрады:
 
-    public Product(int id, String name, int quantity, double price) {
+* Product – өнім туралы ақпарат (ID, атауы, саны, бағасы)
+* Warehouse – өнімдерді сақтау және басқару
+* Main – меню және қолданушымен жұмыс
 
-        this.id = id;
+⸻
 
-        this.name = name;
+⚙️ Негізгі функциялар
 
-        this.quantity = quantity;
+* ➕ Өнім қосу
+* 📋 Өнімдерді көру
+* 🔍 Іздеу
+* ✏️ Жаңарту
+* ❌ Өшіру
 
-        this.price = price;
+⸻
 
-    }
+🔄 CRUD операциялары
 
-    public int getId() {
+* Create – қосу
+* Read – көру
+* Update – өзгерту
+* Delete – өшіру
 
-        return id;
+⸻
 
-    }
+💡 Ерекшелігі
 
-    public String getName() {
+* Қарапайым және түсінікті
+* Java ООП принциптері қолданылған
+* Оқу үшін тиімді жоба
 
-        return name;
+⸻
 
-    }
+🧾 Қорытынды
 
-    public int getQuantity() {
+Бұл жоба қойма жұмысын автоматтандыруға көмектеседі және бағдарламалау негіздерін үйренуге жақсы мысал болып табылады.
 
-        return quantity;
-
-    }
-
-    public double getPrice() {
-
-        return price;
-
-    }
-
-    public void setName(String name) {
-
-        this.name = name;
-
-    }
-
-    public void setQuantity(int quantity) {
-
-        this.quantity = quantity;
-
-    }
-
-    public void setPrice(double price) {
-
-        this.price = price;
-
-    }
-
-    public void display() {
-
-        System.out.println("ID: " + id + ", Name: " + name +
-
-                ", Quantity: " + quantity + ", Price: " + price);
-
-    }
-
-}
