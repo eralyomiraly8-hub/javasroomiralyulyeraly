@@ -1,0 +1,137 @@
+import java.util.*;
+
+class Product {
+
+    int id;
+
+    String name;
+
+    int qty;
+
+    double price;
+
+    Product(int id, String name, int qty, double price) {
+
+        this.id = id;
+
+        this.name = name;
+
+        this.qty = qty;
+
+        this.price = price;
+
+    }
+
+    void show() {
+
+        System.out.println(id + " | " + name + " | " + qty + " | " + price);
+
+    }
+
+}
+
+public class Main {
+
+    static ArrayList<Product> list = new ArrayList<>();
+
+    static Scanner sc = new Scanner(System.in);
+
+    static Product find(int id) {
+
+        for (Product p : list)
+
+            if (p.id == id) return p;
+
+        return null;
+
+    }
+
+    public static void main(String[] args) {
+
+        while (true) {
+
+            System.out.println("\n1.Add  2.Show  3.Find  4.Delete  5.Update  6.Exit");
+
+            int c = sc.nextInt();
+
+            if (c == 1) {
+
+                System.out.print("ID: ");
+
+                int id = sc.nextInt(); sc.nextLine();
+
+                System.out.print("Name: ");
+
+                String name = sc.nextLine();
+
+                System.out.print("Qty: ");
+
+                int q = sc.nextInt();
+
+                System.out.print("Price: ");
+
+                double pr = sc.nextDouble();
+
+                list.add(new Product(id, name, q, pr));
+
+            }
+
+            else if (c == 2) {
+
+                for (Product p : list) p.show();
+
+            }
+
+            else if (c == 3) {
+
+                System.out.print("ID: ");
+
+                Product p = find(sc.nextInt());
+
+                if (p != null) p.show();
+
+                else System.out.println("Not found");
+
+            }
+
+            else if (c == 4) {
+
+                System.out.print("ID: ");
+
+                Product p = find(sc.nextInt());
+
+                if (p != null) list.remove(p);
+
+            }
+
+            else if (c == 5) {
+
+                System.out.print("ID: ");
+
+                Product p = find(sc.nextInt()); sc.nextLine();
+
+                if (p != null) {
+
+                    System.out.print("New name: ");
+
+                    p.name = sc.nextLine();
+
+                    System.out.print("New qty: ");
+
+                    p.qty = sc.nextInt();
+
+                    System.out.print("New price: ");
+
+                    p.price = sc.nextDouble();
+
+                }
+
+            }
+
+            else if (c == 6) break;
+
+        }
+
+    }
+
+}
